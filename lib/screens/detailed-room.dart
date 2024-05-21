@@ -1,5 +1,6 @@
 // ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_neumorphic_plus/flutter_neumorphic.dart';
@@ -103,8 +104,12 @@ class _DetailedRoomState extends State<DetailedRoom> {
 class DeviceCard extends StatefulWidget {
   final Device device;
   final double sizePrimary;
-  const DeviceCard(
-      {super.key, required this.device, required this.sizePrimary});
+
+  const DeviceCard({
+    super.key,
+    required this.device,
+    required this.sizePrimary,
+  });
 
   @override
   State<DeviceCard> createState() => _DeviceCardState();
@@ -155,10 +160,13 @@ class _DeviceCardState extends State<DeviceCard> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Icon(
-                          widget.device.icon,
-                          size: widget.sizePrimary / 3,
-                          color: Colors.grey[800],
+                        Hero(
+                          tag: widget.device.name,
+                          child: Icon(
+                            widget.device.icon,
+                            size: widget.sizePrimary / 3,
+                            color: Colors.grey[800],
+                          ),
                         ),
                         NeumorphicSwitch(
                           value: _switchValue,

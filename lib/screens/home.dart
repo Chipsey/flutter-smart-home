@@ -17,6 +17,11 @@ class Home extends StatelessWidget {
       imageUrl: 'assets/images/living-room.jpeg',
       devices: [
         Device(
+          name: 'Air Conditioner',
+          icon: Icons.air,
+          switchURL: 'http://192.168.1.2/switch3',
+        ),
+        Device(
           name: 'Smart Light',
           icon: Icons.lightbulb_outline,
           switchURL: 'http://192.168.1.2/switch1',
@@ -25,11 +30,6 @@ class Home extends StatelessWidget {
           name: 'Smart TV',
           icon: Icons.tv,
           switchURL: 'http://192.168.1.2/switch2',
-        ),
-        Device(
-          name: 'Thermostat',
-          icon: Icons.thermostat_outlined,
-          switchURL: 'http://192.168.1.2/switch3',
         ),
         Device(
           name: 'Smart Speaker',
